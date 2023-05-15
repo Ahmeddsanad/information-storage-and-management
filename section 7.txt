@@ -1,0 +1,59 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+struct student {
+	string name, address;
+};
+
+int main()
+{
+	ofstream f;
+	f.open("revision.txt");
+	student st;
+	for (int i = 0; i < 3; i++)
+	{
+		cout << "Enter Student Name " << i + 1 << ": ";
+		cin >> st.name;
+		f << st.name << "|";
+
+		cout << "Enter Address of Student " << i + 1 << ": ";
+		cin >> st.address;
+		f << st.address << "|";
+	}
+	f.close();
+	system("pause");
+	return 0;
+}
+________________________________________________________________________
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+struct student {
+	string name, address;
+};
+
+int main()
+{
+	ifstream f;
+	f.open("revision.txt");
+	student st;
+	
+	while (!(f.eof()))
+	{
+		getline(f, st.name,'|');
+		if (f.fail())
+			break;
+		cout << "name : " << st.name << endl;
+		getline(f, st.address, '|');
+		if (f.fail())
+			break;
+		cout << "Address : " << st.address << endl;
+
+	}
+
+	f.close();
+	system("pause");
+	return 0;
+}

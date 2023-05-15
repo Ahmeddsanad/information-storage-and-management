@@ -1,0 +1,91 @@
+#include<iostream>
+#include<fstream>
+#include <string>
+
+using namespace std;
+
+int main() {
+	//1-tellg() ifstream --> read
+	/*
+	ifstream f;
+	f.open("revision.txt");
+	char ch;
+	int end = 0;
+
+	while (!(f.eof()))
+	{
+		f >> ch;
+		end = f.tellg();
+		if (f.fail())
+			break;
+		cout << "char : " << ch << endl;
+		cout << "position : " << end << endl;
+	}
+	f.close();
+	*/
+	//2-tellp() ofstream --> write
+	/*
+	ofstream f;
+	f.open("revision.txt");
+	char ch;
+	int end = 0;
+	cout << "Enter a text to count the position (; for end)" << endl;
+	while (!(f.eof()))
+	{
+		cin >> ch;
+		f << ch;
+
+		if (ch == ';')
+			break;
+
+		end = f.tellp();
+		cout << "position : " << end << endl;
+	}
+	f.close();
+	*/
+	//3-seekg() --> beg
+	/*
+	ifstream f;
+	char ch;
+	f.open("revision.txt");
+
+	f.seekg(5,ios::beg);
+	f >> ch;
+	cout<< ch <<endl ;
+	*/
+	//4-seekg() --> cur
+	/*
+	ifstream f;
+	char ch;
+	int e;
+	f.open("revision.txt"); //ahmedmo (here)--> hamedsaeed
+	f >> ch; // a
+	f >> ch; // h
+	f.seekg(5 , ios::cur); // m e d m o
+	f >> ch; // h
+	cout << ch << endl;
+	*/
+	//5-seekg() --> end
+	/*
+	ifstream f;
+	char ch;
+	int e;
+	f.open("revision.txt");
+	f.seekg(-5 , ios::end); 
+	f >> ch; // ahmedmohameds <--(here) aeed
+	cout << ch << endl;
+
+	f.close();
+	*/
+	//6-seekp()
+	/*
+	ofstream f;
+	f.open("revision.txt");
+	f << "ahmed";
+	f.seekp(3, ios::beg);
+	f << "ooo";
+	f.close();
+	*/
+	system("pause");
+	return 0;
+}

@@ -1,0 +1,88 @@
+#include<iostream>
+#include<fstream>
+#include <string>
+
+using namespace std;
+
+//05 AHMED 05 BANHA
+
+struct stu {
+	char name[20], address[20];
+};
+
+int main() {
+	ofstream f;
+	f.open("revision.txt");
+	stu ob;
+	int len;
+	for (int i = 0; i < 3; i++)
+	{
+		cout << "Enter The Student Name " << i + 1 << " : ";
+		cin >> ob.name;
+		len = strlen(ob.name);
+		if (len < 10)
+			f << 0;
+		f << len << ob.name;
+
+		cout << "Enter The Address Name " << i + 1 << " : ";
+		cin >> ob.address;
+		len = strlen(ob.address);
+		if (len < 10)
+			f << 0;
+		f << len << ob.address;
+	}
+
+	f.close();
+	system("pause");
+	return 0;
+}
+_________________________________________________________________________________
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+struct stu {
+	char name[20], address[20];
+};
+
+int main()
+{
+	ifstream f;
+	f.open("revision.txt");
+	char name[20], address[20];
+	int len;
+	char temp[2];
+	
+	while (!(f.eof()))
+	{
+		f >> temp[0] >> temp[1];
+		len = atoi(temp);
+		if (f.fail())
+			break;
+		for (int i = 0; i < len; i++)
+		{
+			f >> name[i];
+		}
+		for (int i = 0; i < len; i++)
+		{
+			cout << name[i];
+		}
+
+		f >> temp[0] >> temp[1];
+		len = atoi(temp);
+		if (f.fail())
+			break;
+		for (int i = 0; i < len; i++)
+		{
+			f >> address[i];
+		}
+		for (int i = 0; i < len; i++)
+		{
+			cout << address[i];
+		}
+
+	}
+	f.close();
+	system("pause");
+	return 0;
+}

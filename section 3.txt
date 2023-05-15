@@ -1,0 +1,58 @@
+#include<iostream>
+#include<fstream>
+#include <string>
+
+using namespace std;
+
+int main() {
+	
+	//1-coping a txt file
+	/*
+	ifstream f1;
+	f1.open("revision.txt");
+	ofstream f2;
+	f2.open("revisionCopy.txt");
+
+	char ch;
+	while (f1.get(ch))
+	{
+		f2.put(ch);
+	}
+	f1.close();
+	f2.close();
+
+	*/
+	//2-another solution without using get and put
+	/*
+	ifstream f1;
+	f1.open("revision.txt");
+	ofstream f2;
+	f2.open("revisionCopy2.txt");
+
+	char ch;
+	while (f1.good())
+	{
+		if (f1.eof())
+			break;
+		f1 >> ch;
+		f1 >> noskipws;
+		f2 << ch;
+	}
+	f1.close();
+	f2.close();
+	*/
+	//3-coping a image
+	/*
+	ifstream f1;
+	f1.open("bg.jpg",ios::binary);
+	ofstream f2;
+	f2.open("bgCopy.jpg", ios::binary);
+	char ch;
+	while (f1.get(ch))
+	{
+		f2.put(ch);
+	}
+	*/
+	system("pause");
+	return 0;
+}

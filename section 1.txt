@@ -1,0 +1,42 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+	//1-creating and write in a file
+	/*
+	ofstream f;
+	f.open("revision.txt");
+	f << "Ahmed Sanad" << endl;
+	f.close();
+	*/
+	//2-Reading From File using a variable
+	/*
+	string s;
+	ifstream f;
+	f.open("revision.txt");
+	
+	f >> s;
+	cout << s << endl;
+
+	f.close();
+	*/
+	//3-using a file access modes
+	//append
+	/*
+	fstream f;
+	f.open("revision.txt", ios::app);
+	f << " " << "Maadi" << endl;
+	f.close();
+	*/
+
+	system("pause");
+	return 0;
+}
+/*
+Ahmed Sanad Maadi
+*/
+

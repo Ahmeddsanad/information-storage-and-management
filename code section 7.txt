@@ -1,0 +1,62 @@
+/********************** section 7 **************************/
+
+/********** write data into binary files recored (fixed length) **
+#include<iostream>
+#include<string>
+#include<fstream>
+using namespace std;
+struct student
+{
+	int id, age;
+	char name[20];
+	char address[20];
+	float grade;
+};
+
+void main(){
+	student stu;
+
+    ofstream file;
+	file.open("file.txt", ios::app|ios::binary);
+
+	stu.id = 2;
+    stu.age =21;
+
+	strcpy_s(stu.name, "ahmed");
+	strcpy_s(stu.address, "cairo");
+
+	stu.grade=3.5;
+
+	//file<<stu.id<<stu.age<<stu.name<<stu.address<<stu.grade;
+	file.write((char*)&stu, sizeof(stu));
+
+   system("pause");
+}
+*/
+/**************** read record from binary files(fixed length) **************
+#include<iostream>
+#include<string>
+#include<fstream>
+using namespace std;
+struct student
+{
+	int id, age;
+	char name[20];
+	char address[20];
+	float grade;
+};
+
+void main(){
+    fstream file;
+	file.open("file.txt",ios::in);
+
+	student stu;
+
+	//file>>stu.id>>stu.age>>stu.name>>stu.address>>stu.grade;
+	file.read((char*)&stu, sizeof(stu));
+
+	cout<<stu.id<<" "<<stu.age<<" "<<stu.name<<" "<<stu.address<<" "<<stu.grade<<endl;
+
+   system("pause");
+}
+*/

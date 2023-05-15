@@ -1,0 +1,144 @@
+#include<iostream>
+#include<fstream>
+#include <string>
+
+using namespace std;
+
+int main() {
+	//1-Read A Word
+	/*
+	string s;
+	ifstream f;
+	f.open("revision.txt");
+	while (f >> s)
+	{
+		cout << s << " ";
+	}
+	f.close();
+	*/
+	//2-Read A Character
+	/*
+	char ch;
+	ifstream f;
+	f.open("revision.txt");
+	while (f >> ch)
+	{
+		cout << ch;
+	}
+	f.close();
+	*/
+	//3-Read Using getline
+	/*
+	string s;
+	ifstream f;
+	f.open("revision.txt");
+	while (getline(f, s))
+	{
+		cout << s<<endl;
+	}
+	f.close();
+	*/
+	//4-Read A Word using eof
+	/*
+	string s;
+	ifstream f;
+	f.open("revision.txt");
+	while (!(f.eof()))
+	{
+		f >> s;
+		cout << s << " ";
+	}
+	f.close();
+	*/
+
+	//Reading a character using spaces
+	
+	//5-Read A Character using noskipws
+	/*
+	char ch;
+	ifstream f;
+	f.open("revision.txt");
+	while (f >> ch)
+	{
+		f >> noskipws;
+		cout << ch << " ";
+	}
+	f.close();
+	*/
+	//6-Read A Character using get
+	/*
+	char ch;
+	ifstream f;
+	f.open("revision.txt");
+	while (f.get(ch))
+	{
+		cout << ch << " ";
+	}
+	f.close();
+	*/
+	//7-Reading Line by Line
+	/*
+	string s;
+	ifstream f;
+	f.open("revision.txt");
+
+	while (getline(f, s)) {
+		cout << s << endl;
+	}
+
+	f.close();
+	*/
+	//bad - fail - good - eof - is_open
+	//bad if the file is not opened or if device that stores file has no spaces
+	//fail same as bad but fail is focus on file format
+	//good while the file is good (no problem in the reading or writing)
+	//eof if the file reaches the end of file (e o f)
+
+	//8-using good with     eof --> (solve infinite loop)
+	/*
+	string s;
+	ifstream f;
+	f.open("revision.txt");
+	while (f.good())
+	{
+		if (f.eof())
+			break;
+
+		getline(f, s);
+		cout << s << endl;
+	}
+	f.close();
+	*/
+    //9-using fail
+	/*
+	string s;
+	ifstream f;
+	f.open("revision.txt");
+	while (!(f.eof()))
+	{
+		if (f.fail())
+			break;
+
+		getline(f, s);
+		cout << s << endl;
+	}
+	f.close();
+	*/
+	//10-using is_open
+	/*
+	string s;
+	ifstream f;
+	f.open("revision.txt");
+	while (!(f.eof()))
+	{
+		if (f.is_open())
+		{
+			getline(f, s);
+			cout << s << endl;
+		}
+	}
+	f.close();
+	*/
+	system("pause");
+	return 0;
+}

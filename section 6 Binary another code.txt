@@ -1,0 +1,46 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+struct stu {
+	char name[20], address[20];
+};
+
+int main()
+{
+	ofstream f;
+	f.open("revision.txt", ios::binary);
+	stu st1;
+
+	cin >> st1.name;
+	cin >> st1.address;
+	//strcpy_s(st1.name, "AHMED");
+	//strcpy_s(st1.address, "Maadi");
+
+	f.write((char*)&st1, sizeof(st1));
+	f.write((char*)&st1, sizeof(st1));
+	f.close();
+	system("pause");
+	return 0;
+}
+_____________________________________________________
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+struct stu {
+	char name[20], address[20];
+};
+
+int main()
+{
+	ifstream f;
+	f.open("revision.txt", ios::binary);
+	stu st1;
+
+	f.read((char*)&st1, sizeof(st1));
+	cout << st1.name << " " << st1.address;
+	f.close();
+	system("pause");
+	return 0;
+}
